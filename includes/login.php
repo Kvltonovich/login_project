@@ -17,9 +17,9 @@ include restriction.php;
 //query db for row matching username and password
 function authenticate ($username,$password) {
     
-    $dbc=mysqli_connect('localhost','steve','password1','web_users')or die("Error connecting to MySQL server." . mysqli_connect_error());
+    $dbc=mysqli_connect('localhost','root','test123','test')or die("Error connecting to MySQL server." . mysqli_connect_error());
     
-    $query="SELECT * FROM users WHERE username='$username' and password='$password'";
+    $query="SELECT * FROM userData WHERE username='$username' and password='$password'";
     $result=mysqli_query($dbc, $query)or die("Error querying database");
     $row=mysqli_fetch_assoc($result);
     

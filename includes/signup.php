@@ -1,10 +1,10 @@
 <?php
 
 $host = "localhost";
-$db_username = "steve";
-$db_password = "password1";
-$db_name = "web_users";
-$table = "users";
+$db_username = "root";
+$db_password = "test123";
+$db_name = "test";
+$table = "userData";
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
