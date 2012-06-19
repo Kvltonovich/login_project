@@ -3,8 +3,8 @@
 $host = "localhost";
 $db_username = "root";
 $db_password = "test123";
-$db_name = "test";
-$table = "userData";
+$db_name = "userData";
+$table = "login";
 
 $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
