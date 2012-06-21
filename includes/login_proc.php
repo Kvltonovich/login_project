@@ -8,6 +8,11 @@ include 'login.php';
 $username = $_POST["username"];
 $password = $_POST["password"];
 
+//Grab values for login_id from DB
+while ($row = mysqli_fetch_assoc($result) {
+	$_SESSION['access_level'][]
+}
+
 start($username,$password);
 
 if ($_SESSION['logged_in']=yes) {
@@ -16,5 +21,5 @@ if ($_SESSION['logged_in']=yes) {
     echo $_SESSION['access_level'];
 }
 else {
-    echo "lame";
+    echo "epic fail";
 }
