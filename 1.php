@@ -9,7 +9,7 @@
  
 session_start();
 
-include 'includes/restriction.php';
+include 'includes/functions.php';
 
 check_access(1);
 

@@ -5,7 +5,7 @@
  * @author Colton Trautz <colton@sendpepper.com>
  *
  */
-include "restriction.php";
+include "functions.php";
 include "connect.php";
  
 session_start();
@@ -54,23 +54,23 @@ $result=mysqli_query($dbc, $query)or die("Error querying database" . mysqli_conn
 echo "<table border='1'><tbody>
 <tr>\n";
 if($by == 'firstname' && $order == 'ASC')
-  echo '<th><a href="?by=firstname&amp;order=DESC">First Name </th>';
+  echo '<th><a href="?by=firstname&amp;order=DESC">First Name</th>';
 else
-  echo '<th><a href="?by=firstname&amp;order=ASC">First Name </th>';
+  echo '<th><a href="?by=firstname&amp;order=ASC">First Name</th>';
 if($by == 'lastname' && $order == 'ASC')
-  echo '<th><a href="?by=lastname&amp;order=DESC">Last Name </th>';
+  echo '<th><a href="?by=lastname&amp;order=DESC">Last Name</th>';
 else
-  echo '<th><a href="?by=lastname&amp;order=ASC">Last Name </th>';
+  echo '<th><a href="?by=lastname&amp;order=ASC">Last Name</th>';
 if($by == 'email' && $order == 'ASC')
-  echo '<th><a href="?by=email&amp;order=DESC">Email </th>';
+  echo '<th><a href="?by=email&amp;order=DESC">Email</th>';
 else
   echo '<th><a href="?by=email&amp;order=ASC">Email</th>';
 if($by == 'username' && $order == 'ASC')
-  echo '<th><a href="?by=username&amp;order=DESC">Username </th>';
+  echo '<th><a href="?by=username&amp;order=DESC">Username</th>';
 else
-  echo '<th><a href="?by=username&amp;order=ASC">Username </th>';
+  echo '<th><a href="?by=username&amp;order=ASC">Username</th>';
 if($by == 'password' && $order == 'ASC')
-  echo '<th><a href="?by=password&amp;order=DESC">Password </th>';
+  echo '<th><a href="?by=password&amp;order=DESC">Password</th>';
 else
   echo '<th><a href="?by=password&amp;order=ASC">Password</th>';
 
@@ -94,52 +94,3 @@ while($row = mysqli_fetch_assoc($result)) {
   }
 echo "</table>";
 
-
-/*
-while($row = mysql_fetch_array($result))
-{
-  echo "<tr>";
-  echo "<td>" . $row['firstname'] . "</td>";
-  echo "<td>" . $row['lastname'] . "</td>";
-  echo "<td>" . $row['email'] . "</td>";
-  echo "</tr>";
-}
-echo "</tbody></table>";
-
-
-
-
-
-
-
-/*
-// then order the query
-$result = mysql_query("SELECT * FROM staff ORDER BY $by $order");
-
-
-?>
-
-<table border='1'>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-<th>Email</th>
-<th>Username</th>
-<th>Password</th>
-</tr>
-
-<?php
-while($row = mysqli_fetch_assoc($result)) {
-  ?>
-  
-<tr>
-<td> <?= $row['firstname'] ?></td>
-<td> <?= $row['lastname'] ?> </td>
-<td> <?= $row['email'] ?></td>
-<td> <?= $row['username'] ?></td>
-<td> <?= $row['password'] ?></td>
-  </tr>;
-  <?php
-  }
-echo "</table>";
-?>
