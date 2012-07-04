@@ -108,11 +108,7 @@ while($row = mysqli_fetch_assoc($result)) {
 	<td> <?= $row['password'] ?></td>
 	<td> 
 		<form action="delete.php" method="post">
-<<<<<<< HEAD
 				<input name="username" value="<?=$row['username'];?>" type="hidden"/>
-=======
-			<input name="username" value="<?=$row['username'];?>" type="hidden"/>
->>>>>>> Update
 			<input name="password" value="<?=$row['password'];?>" type="hidden"/>
 			<input name="delbutton" type="submit" value="Delete">
 		</form>
