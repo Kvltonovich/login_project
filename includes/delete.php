@@ -1,7 +1,7 @@
 <?php
-include "connect.php";
-include "functions.php";
-include "controller.php";
+include_once  "connect.php";
+include_once  "functions.php";
+include_once  "controller.php";
 
 function delete_contact($username, $password){
 	$query="DELETE FROM login WHERE username='$username' and password='$password'";

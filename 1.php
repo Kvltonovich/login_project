@@ -9,7 +9,7 @@
  
 session_start();
 
-include 'includes/functions.php';
+include_once 'includes/functions.php';
 
 check_access(1);
 

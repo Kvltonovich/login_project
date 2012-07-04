@@ -9,6 +9,6 @@
  
 session_start();
 
-include 'includes/restriction.php';
+include_once 'includes/restriction.php';
 
 check_level(2);
