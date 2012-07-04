@@ -1,4 +1,7 @@
 <?php
+include "connect.php";
+include "functions.php";
+include "controller.php";
 
 function delete_contact($username, $password){
 	$query="DELETE FROM login WHERE username='$username' and password='$password'";
@@ -6,3 +9,4 @@ function delete_contact($username, $password){
 	header("location: ./contacts.php");
 }
 
+delete_contact($username, $password);
