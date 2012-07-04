@@ -29,8 +29,6 @@ check_level(1);
 		<input type="text" name="username" placeholder="Username"><br>
 		<input type="password" name="password" placeholder="Password"><br>
 		<input type="submit" class="submit" value="Add Contact">
-		<span class="error" style="display:none"> Please Enter Valid Email</span>
-		<span class="success" style="display:none"> Contact Created Successfully</span>
 	</div>
 </form>
 
@@ -99,6 +97,7 @@ while($row = mysqli_fetch_assoc($result)) {
 	<td> <?= $row['email'] ?></td>
 	<td> <?= $row['username'] ?></td>
 	<td> <?= $row['password'] ?></td>
+	<td width="10%"><a href="edit.php?id=<?php echo $rows['id']; ?>">Edit</a></td>
 	<td> 
 		<form action="delete.php" method="post">
 				<input name="username" value="<?=$row['username'];?>" type="hidden"/>
@@ -106,6 +105,7 @@ while($row = mysqli_fetch_assoc($result)) {
 			<input name="delbutton" type="submit" value="Delete">
 		</form>
 	</td>
+	
 </tr>
 <?php
 
