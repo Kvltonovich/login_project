@@ -1,33 +1,88 @@
 body {
-    background-color: #DDD;
+    background-color: #313131;
+    font-family: sans-serif;
 }
 
 .login_wrapper {
-    width: 375px;
+    width: 410px;
     position: relative;
     margin: 10% auto 0;
-    border: 4px ridge #CCC;
+    border: 4px ridge #ddd;
+    border-radius: 15px;
     padding: 8px;
-    background-color: #EEE;
+    background-color: #ebebeb;
     display: table;
 }
 
 label {
     width: 30%;
-    float: left;
+    float: center;
     font-size: 1.2em;
     font-weight: bold;
-    font-family: sans-serif;
-    margin: 5px 7px;
+    margin: 3px 5px;
 }
 
 input {
-    margin-bottom: 15px;
-    font-size: 1.2em;
+    margin-bottom: 6px;
+    font-size: 1.1em;
 }
 
 .submit {
     margin: 2px auto;
     width: 100px;
     font-weight: bold;
+}
+
+#quickadd {
+    border: 0px solid #000;
+    float: left;
+    padding: 0px 20px;
+    margin: 20px;
+    font-size: .8em;
+    background-color: #EEE;
+}
+
+.quickaddlabel {
+    float: left;
+    font-size: 1em;
+    width: auto;
+}
+
+.collection {
+    width: 75%;
+    background-color: #FFF;
+}
+
+a.collectionsheader:link {
+    color: #000;
+    text-decoration: none;
+}
+
+a.collectionsheader:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+tr.collection {
+    border: 1px solid #000;
+}
+
+th.collection {
+    background-color: #999FAD;
+    border: none;
+    text-align: left;
+    width: 28%;
+}
+
+tr.collection:nth-child(even) {
+    background-color: #EEE;
+}
+
+tr > th.collection:first-child {
+    width: 5%;
+    padding: 7px 5px;
+}
+
+tr > th.collection:nth-child(2) { 
+    width: 10%;
 }

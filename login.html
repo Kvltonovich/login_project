@@ -1,17 +1,27 @@
 <html>
 <head>
-    <title>Login Project | Login Page</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="includes/style.css" type="text/css">
 </head>
 <body>
     <div class="login_wrapper" align="center">
-        <form method="post" action="includes/login_proc.php">
-            <label>Username:</label>
-            <input type="text" name="username"><br>
-            <label>Password:</label>
-            <input type="password" name="password"><br>
-            <input type="submit" class="submit" value="Login">
+    	<table>
+    	<tr>
+    	<td>
+        <p style="font-weight: bold; color: #c00;">Login to Contacts.php</p>
+        <form method="post" action="includes/login.php">
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" class="submit" value="Login"><br/>
         </form>
+            <a href="./resetpassword.html">Lost your password?</a>
     </div>
+    </td>
+    <td>
+    <p style="font-weight: bold; padding: 6px;">Don't have an account?</br>
+    Click <a href="./signup.html">here</a> to signup!</p>
+    </td>
+    </tr>
+    </table>
 </body>
 </html>

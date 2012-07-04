@@ -1,30 +1,73 @@
 <?php
 /*
- * Authenticate username and password. Start session
+ * Authenticate username and password. Start session.
  *
- * @author Steve Layman <slayman@sendpepper.com>
+ * @author Colton Trautz <colton@sendpepper.com>
  *
- * @param str $username
- * @param str $password
+ * 
  */
-
-//is this a good way of restarting the session when someone logs in? Not sure if there's a better way to do this
-session_destroy();
+include "connect.php";
+include "restriction.php";
+ 
 session_start();
 
-include 'restriction.php';
-include 'config.php'; 
+//Store username and password from post data
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+//query db for row matching username and password
+function authenticate($username,$password) {
+    global $connect;
+    
+    $dbc=mysqli_connect($connect['host'],$connect['username'],$connect['password'],$connect['db'])or die("Error connecting to MySQL server.1" . mysqli_connect_error());
+    
+    $query="SELECT * FROM login WHERE username='$username' and password='$password'";
+
+    $result=mysqli_query($dbc, $query)or die("Error querying database" . mysqli_connect_error());
+    
+    $row=mysqli_fetch_assoc($result);
+    
+    $_SESSION['id']=$row["id"];
+    $_SESSION['firstname'] = $row['firstname'];
+    
+    //keep count of matching records
+    $count=mysqli_num_rows($result);
+    
+    mysqli_close($dbc);
+    
+    return $count==1;
+}
+
+//pull access levels from perms table and set session access level
+function get_perms($id) {
+    global $connect;
+    
+    $dbc=mysqli_connect($connect['host'],$connect['username'],$connect['password'],$connect['db'])or die("Error connecting to MySQL server." . mysqli_connect_error());
+    
+    $query="SELECT * FROM perms WHERE id='$id'";
+    $result=mysqli_query($dbc, $query)or die("Error querying database" . mysqli_connect_error());
+    
+    while($row = mysqli_fetch_assoc($result)) {
+        $_SESSION['access'][]=$row['access'];
+    }
+    
+    mysqli_close($dbc);
+}
 
 //if unique user is located, start session
-//problem is this runs regardless of whether or not a unique user is found. If I just type gibberish in the login page, $_SESSION['logged_in'] still gets set to yes
 function start ($username,$password) {
-    if (authenticate($username,$password,$login_id)) {
+    //reset session vars on new login
+    session_unset();
+    
+    if (authenticate($username,$password)) {
         $_SESSION['logged_in']=yes;
-        
-        header("location: 1.php");
+        get_perms($_SESSION['id']);
+        header("location: ./contacts.php");
         }
     
     else {
-        echo "Wrong Username or Password.<br>";
+        echo '<p>Wrong Username or Password.</p><a href="login.html>Try again</a></body></html>';
     }
 }
+
+start($username,$password);
