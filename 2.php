@@ -4,7 +4,6 @@
  *
  * @author Colton Trautz <colton@sendpepper.com>
  *
- * 
  */
  
 session_start();

@@ -5,6 +5,7 @@
  *
  * 
  */
+include_once "connect.php";
 
 //Stores signup form data
 $firstname = $_POST['firstname'];
@@ -14,3 +15,4 @@ $email = $_POST ['email'];
 //Stores username and password from login form
 $username = $_POST["username"];
 $password = $_POST["password"];
+

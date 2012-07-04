@@ -7,6 +7,7 @@
  */
 include_once "functions.php";
 include_once "connect.php";
+include_once "controller.php";
 
  
 session_start();
@@ -36,14 +37,6 @@ check_level(1);
 <h1>Contacts</h1>
 
 <?php
-//Sortable Database collection
-$dbc = mysqli_connect(
-		$connect['host'],
-		$connect['username'],
-		$connect['password'],
-		$connect['db']
-	) or die("Error connecting to MySQL server.1" . mysqli_connect_error() );
-
 
 //ascend/descend
 switch($_GET['by']){
