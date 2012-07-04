@@ -7,6 +7,7 @@
  */
 include "functions.php";
 include "connect.php";
+
  
 session_start();
 
@@ -15,14 +16,18 @@ check_level(1);
  
 //simple contact creation form
 ?>
-
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
 <h3>Quick-Add Contacts</h3>
-<form method="post" action="includes/signup.php">
+<form method="post" action="signup.php">
             <input type="text" name="firstname" placeholder="First Name"><br>
             <input type="text" name="lastname" placeholder="Last Name"><br>
+            <input type="text" name="email" placeholder="Email"><br>
             <input type="text" name="username" placeholder="Username"><br>
             <input type="password" name="password" placeholder="Password"><br>
             <input type="submit" class="submit" value="Add Contact">
+            <span class="error" style="display:none"> Please Enter Valid Email</span>
+<span class="success" style="display:none"> Contact Created Successfully</span>
+</div>
         </form>
 
 <h1>Contacts</h1>
@@ -34,6 +39,7 @@ $dbc=mysqli_connect($connect['host'],$connect['username'],$connect['password'],$
 
 //ascend/descend
 switch($_GET['by']){
+  case 'delete';
   case 'firstname':
   case 'lastname':
   case 'email':
@@ -47,12 +53,14 @@ switch($_GET['by']){
 }
 $order = ($_GET['order']=='ASC')?'ASC':'DESC';
 
+
 $query="SELECT * FROM login ORDER BY $by $order";
 $result=mysqli_query($dbc, $query)or die("Error querying database" . mysqli_connect_error());
 
 // then add sorting options
 echo "<table border='1'><tbody>
 <tr>\n";
+
 if($by == 'firstname' && $order == 'ASC')
   echo '<th><a href="?by=firstname&amp;order=DESC">First Name</th>';
 else
@@ -89,6 +97,10 @@ while($row = mysqli_fetch_assoc($result)) {
 <td> <?= $row['email'] ?></td>
 <td> <?= $row['username'] ?></td>
 <td> <?= $row['password'] ?></td>
+<td> 
+<form action="delete.php" method="post">
+<input name="delbutton" type="submit" value="Delete"></td>
+</form>
   </tr>;
   <?php
   }

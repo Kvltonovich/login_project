@@ -1,4 +1,10 @@
 <?php
+/*
+ * Issue here is it fails if you have any access other than 1
+ * @author Colton Trautz <colton@sendpepper.com>
+ *
+ * 
+ */
 
 //Restriction
 function check_level($access) {
