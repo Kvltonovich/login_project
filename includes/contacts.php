@@ -19,7 +19,7 @@ check_level(1);
 
 <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
 	<h3>Quick-Add Contacts</h3>
-		<form method="post" action="signup.php">
+		<form method="post" action="js/ajaxform.js">
 			<div>
 				<input type="text" name="firstname" placeholder="First Name"><br>
 				<input type="text" name="lastname" placeholder="Last Name"><br>
