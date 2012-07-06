@@ -69,3 +69,4 @@ function start ($username,$password) {
         echo '<p>Wrong Username or Password.</p><a href="login.html>Try again</a></body></html>';
     }
 }
+
