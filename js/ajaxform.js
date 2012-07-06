@@ -10,5 +10,5 @@ var lastname = $("#email").val();
 var username = $("#username").val();
 var password = $("#password").val();
 var dataString = 'firstname='+ firstname  + '&lastname=' + lastname + "&email" + email + '&username=' + username + '&password=' + password;
-document.location.href = “signup.php”,
+document.location.href = “contacts.php”,
 </script>
