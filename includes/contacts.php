@@ -19,16 +19,18 @@ check_level(1);
 
 <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
 	<h3>Quick-Add Contacts</h3>
-		<form method="post" action="js/ajaxform.js">
-			<div>
-				<input type="text" name="firstname" placeholder="First Name"><br>
-				<input type="text" name="lastname" placeholder="Last Name"><br>
-				<input type="text" name="email" placeholder="Email"><br>
-				<input type="text" name="username" placeholder="Username"><br>
-				<input type="password" name="password" placeholder="Password"><br>
-				<input type="submit" class="submit" value="Add Contact">
-			</div>
-		</form>
+		<div id="contact_form">
+			<form name="quickAdd" method="post" action="">
+				<div>
+					<input id="firstname" type="text" name="firstname" placeholder="First Name"><br>
+					<input id="lastname" type="text" name="lastname" placeholder="Last Name"><br>
+					<input id="email" type="text" name="email" placeholder="Email"><br>
+					<input id="username" type="text" name="username" placeholder="Username"><br>
+					<input id="password" type="password" name="password" placeholder="Password"><br>
+					<input id="submit_btn" type="submit" class="submit" value="Add Contact">
+				</div>
+			</form>
+		</div>
 	<h1>Contacts</h1>
 
 <?php
