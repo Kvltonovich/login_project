@@ -1,7 +1,6 @@
 <?php
 /*
  * Checks Login status. Has Simple Form. Display a list of contacts + Header
- *
  * @author Colton Trautz <colton@sendpepper.com>
  *
  */

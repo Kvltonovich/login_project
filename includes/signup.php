@@ -1,7 +1,6 @@
 <?php
 /*
  * Posts form data to MYSQL DB
- *
  * @author Colton Trautz <colton@sendpepper.com>
  *
  * 

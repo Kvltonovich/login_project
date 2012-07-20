@@ -3,7 +3,6 @@
  * Authenticate username and password. Start session.
  *
  * @author Colton Trautz <colton@sendpepper.com>
- *
  * 
  */
 include "functions.php";

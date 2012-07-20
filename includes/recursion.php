@@ -4,7 +4,6 @@
 * 
 * Function that accepts a multi-dimensional container of any size and converts it into a 
 * one dimensional associative array who's keys are strings representing their value's path in the original container.
-*
 */ 
 
 function recursion($array) { 
