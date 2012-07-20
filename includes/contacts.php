@@ -15,7 +15,6 @@ session_start();
 check_level(1);
  
 //simple contact creation form
-
 ?>
 
 <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
